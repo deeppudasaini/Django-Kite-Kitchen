@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../static/styles.css"/>
+        
+		<title>{% block title %}{% endblock title %}</title>
+	</head>
+	<body>
+	<header>
+		<section>
+			<aside>
+				<h3>Opening times:</h3>
+				<p>Sun-Thu: 12:00-22:00</p>
+				<p>Fri-Sat: 12:00-23:30</p>
+			</aside>
+			<h1>Kate's Kitchen</h1>
+
+		</section>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="">Home</a></li>
+			<li>Menu
+				<ul>
+					<li><a href="/category">Starters</a></li>
+					<li><a href="/category">Mains</a></li>
+					<li><a href="/category">Dessert</a></li>
+
+				</ul>
+			</li>
+			<li><a href="/about">About Us</a></li>
+		</ul>
+
+	</nav>
+
+	
+
+{% block main %}{% endblock main %}
+	<footer>
+		&copy; Kate's Kitchen 2017
+	</footer>
+</body>
+</html>
