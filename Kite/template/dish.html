@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block main %}
+<main class="sidebar">
+
+	<section class="left">
+		<ul>
+					{% for singleCategory in categories %}
+					<li><a href="/category/{{singleCategory.id}}">{{singleCategory.category}}</a></li>
+				{% endfor %}
+	</ul>
+	</section>
+
+	<section class="right">
+{% for menu in menuInfo %}
+<div class="card">
+  <h5 class="card-header">{{menu.name}}</h5>
+  <div class="card-body">
+    <h5 class="card-title">Price: {{menu.price}}</h5>
+    <p class="card-text">{{menu.desciption}}</p>
+    <a href="" class="btn btn-primary">Review</a>
+  </div>
+</div>
+{% endfor %}
+</section>
+</main>
+{% endblock main %}

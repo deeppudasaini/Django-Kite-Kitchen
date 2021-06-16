@@ -6,7 +6,7 @@
 	<section class="left">
 		<ul>
 					{% for singleCategory in categories %}
-					<li><a href="/category">{{singleCategory.category}}</a></li>
+					<li><a href="/category/{{singleCategory.id}}">{{singleCategory.category}}</a></li>
 				{% endfor %}
 	</ul>
 	</section>
@@ -18,18 +18,25 @@
 	<ul class="listing">
 
 
-	
 		<li>
 
-		<div class="details">
-			<h3>Test</h3>
-		<h2>Test</h2>
-	
-		<p>Test</p>
+		<div class="row">
+	{% for menu in menus %}
 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{menu.name}}</h5>
+        
+        <a href="/dish/{{menu.id}}" class="btn btn-primary">Price: {{menu.price}} </a>
+      </div>
+    </div>
+  </div>
+	{% endfor %}
+</div>
 
-		</div>
 		</li>
+		
 
 
 </ul>

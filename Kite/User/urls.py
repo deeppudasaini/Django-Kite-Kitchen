@@ -19,7 +19,7 @@ from User import views
 urlpatterns = [
 path("",views.userPage,name="User Page"),
 path("about",views.aboutUs,name="About Us"),
-path("category",views.categories,name="categories"),
+path("category/<int:idOfMenu>/",views.categories,name="categories"),
 path("booking",views.book,name="booking"),
-
+path("dish/<int:idOfDish>",views.dishPage,name="Dish"),
 ]
