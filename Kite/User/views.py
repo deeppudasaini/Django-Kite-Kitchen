@@ -1,7 +1,10 @@
 from django.shortcuts import render,redirect,HttpResponse
-from .models import Category,Updates,Booking,Menu
+from .models import Category,Updates,Booking,Menu,Staff
+from django.contrib.auth import authenticate,logout,login
+from django.contrib import messages
 # Create your views here.
 def userPage(request):
+    
     variables=    {
         'categories':Category.objects.all(),
         'updates':Updates.objects.all()
@@ -39,3 +42,16 @@ def book(request):
         return render(request,"booking.html")
 
     
+def Login(request):
+    if request.method=='POST':  
+        user=request.POST['username']
+        passwor=request.POST['password']
+        auth=authenticate(username=user,password=passwor)
+        if auth is not None:   
+            login(request,auth)
+            return redirect("/")
+    else:
+        return render(request,"login.html")
+def Logout(request):
+    logout(request)
+    return redirect("/")

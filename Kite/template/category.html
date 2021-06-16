@@ -23,11 +23,10 @@
 		<div class="row">
 	{% for menu in menus %}
 
-  <div class="col-sm-6">
+  <div class="col-sm-6" style="margin-bottom:20px">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">{{menu.name}}</h5>
-        
         <a href="/dish/{{menu.id}}" class="btn btn-primary">Price: {{menu.price}} </a>
       </div>
     </div>

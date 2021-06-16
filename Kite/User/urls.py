@@ -22,4 +22,6 @@ path("about",views.aboutUs,name="About Us"),
 path("category/<int:idOfMenu>/",views.categories,name="categories"),
 path("booking",views.book,name="booking"),
 path("dish/<int:idOfDish>",views.dishPage,name="Dish"),
+path("login",views.Login,name="Login"),
+path("logout",views.Logout,name="Login"),
 ]

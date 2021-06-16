@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %}Dish page{% endblock title %}
 {% block main %}
 <main class="sidebar">
 
@@ -11,6 +12,7 @@
 	</section>
 
 	<section class="right">
+	<h1>Dish</h1>
 {% for menu in menuInfo %}
 <div class="card">
   <h5 class="card-header">{{menu.name}}</h5>
