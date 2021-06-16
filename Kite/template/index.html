@@ -1,16 +1,31 @@
 {% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
 {% block main %}
 <main class="home">
 		<p>Welcome to Kate's Kitchen, we're a familyl run resturaunt in northampton. Take a look around our site to see our menu!</a></p>
 
 		<h2>Take a look at our menu:</h2>
 				<ul>
-					<li><a href="/category">Starters</a></li>
-					<li><a href="/category">Mains</a></li>
-					<li><a href="/category">Dessert</a></li>
+				{% for singleCategory in categories %}
+					<li><a href="/category">{{singleCategory.category}}</a></li>
+				{% endfor %}
 
 				</ul>
 			</li>
+			{% for singleUpdates in updates %}
+<div class="card text-center" style="margin-bottom:20px;">
+  <div class="card-header bg-success">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{singleUpdates.updateTitle}}</h5>
+    <p class="card-text">{{singleUpdates.updateDescription}}</p>
 
+  </div>
+  <div class="card-footer text-muted">
+    {{singleUpdates.updateDates}}
+  </div>
+</div>
+{% endfor %}
 	</main>
     {% endblock main %}

@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
-{% block title %}Category page{% endblock title %}Category page
+{% block title %}Category page{% endblock title %}
 {% block main %}
 <main class="sidebar">
 
 	<section class="left">
 		<ul>
-				<li><a href="/category">Starters</a></li>
-				<li><a class="current" href="/category">Mains</a></li>
-				<li><a href="/category">Dessert</a></li>		</ul>
+					{% for singleCategory in categories %}
+					<li><a href="/category">{{singleCategory.category}}</a></li>
+				{% endfor %}
+	</ul>
 	</section>
 
 	<section class="right">
